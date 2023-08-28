@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": " npx tailwindcss -i ./src/main.css -o ./dist/styles.css --watch"
+    "build": " npx tailwindcss -i ./src/main.css -o ./dist/styles.css --watch",
+    "lint": "npx eslint . --fix",
+    "lint:check": "npx stylelint \"**/*.css\" && npx eslint .",
+    "format": "npx prettier  --write **/*.{html,js,json,md,json,yaml,yml,jsx}",
+    "format:check": "npx prettier  --check **/*.{html,js,json,md,json,yaml,yml}",
+    "stylelint:check": "npx stylelint \"**/*.css\"",
+    "eslint:check": " npx eslint ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kareem24/tailwind-template.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,6 +30,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.28.1",
     "postcss": "^8.4.21",
+    "prettier": "3.0.2",
+    "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-tailwindcss": "^0.0.7",
     "tailwindcss": "^3.3.1"
   }

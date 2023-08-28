@@ -4,7 +4,6 @@
 
 > One paragraph statement about the project.
 
-
 Additional description about the project and its features.
 
 ## Built With
@@ -37,8 +36,8 @@ npm install
 ```bash
 npm run build
 ```
- so as to watch all changes make in your file
 
+so as to watch all changes make in your file
 
 ## 👤 Author
 
