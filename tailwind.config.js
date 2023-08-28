@@ -1000,4 +1000,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}

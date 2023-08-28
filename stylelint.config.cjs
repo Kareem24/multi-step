@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 module.exports = {
-  extends: ['stylelint-config-recommended',
-    'stylelint-config-tailwindcss'],
+  extends: ['stylelint-config-recommended', 'stylelint-config-tailwindcss'],
   rules: {
     'at-rule-no-unknown': [
       true,
@@ -18,4 +17,4 @@ module.exports = {
     'declaration-block-trailing-semicolon': null,
     'no-descending-specificity': null,
   },
-};
+}

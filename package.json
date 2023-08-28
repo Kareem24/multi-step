@@ -7,8 +7,8 @@
     "build": " npx tailwindcss -i ./src/main.css -o ./dist/styles.css --watch",
     "lint": "npx eslint . --fix",
     "lint:check": "npx stylelint \"**/*.css\" && npx eslint .",
-    "format": "npx prettier  --write **/*.{html,js,json,md,json,yaml,yml,jsx}",
-    "format:check": "npx prettier  --check **/*.{html,js,json,md,json,yaml,yml}",
+    "format": "npx prettier  --write **/*.{html,js,json,md,json,yaml,yml,jsx,cjs}",
+    "format:check": "npx prettier  --check **/*.{html,js,json,md,json,yaml,yml,cjs}",
     "stylelint:check": "npx stylelint \"**/*.css\"",
     "eslint:check": " npx eslint ."
   },
