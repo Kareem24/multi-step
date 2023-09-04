@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+      <!-- MarineBlue: "hsl(213, 96%, 18%)",
+        purplishBlue: 'hsl(243, 100%, 62%)',
+        pastelBlue: 'hsl(228, 100%, 84%)',
+        lightBlue: ' hsl(206, 94%, 87%)',
+        strawberryRed: 'hsl(354, 84%, 57%)',
+        coolGray: ' hsl(231, 11%, 63%)',
+        lightGray: 'hsl(229, 24%, 87%)',
+        Magnolia: 'hsl(217, 100%, 97%)',
+        Alabaster: 'hsl(231, 100%, 99%)',
+        White: ' hsl(0, 0%, 100%)', -->
+    <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
+      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8">
+        <aside  class="side-nav bg-center bg-cover bg-no-repeat h-full w-full p-8 bg-desktop rounded-lg" >
+          <ul class="steps flex flex-col gap-5">
+            <li class="step flex items-center gap-3">
+              <p class="step-number bg-lightBlue rounded-full w-8 h-8 flex items-center justify-center text-MarineBlue font-bold">1</p>
+              <div class="step-info flex flex-col ">
+                <p class="step-level uppercase font-thin text-xs text-White">step 1</p>
+                <p class="info uppercase font-bold text-White text-sm">your info</p>
+              </div>
+            </li>
+            <li class="step flex items-center gap-3">
+              <p class="step-number border-lightBlue  border-2 text-lightBlue rounded-full w-8 h-8 flex items-center justify-center font-bold">2</p>
+              <div class="step-info flex flex-col ">
+                <p class="step-level uppercase font-thin text-xs text-White">step 2</p>
+                <p class="info uppercase font-bold text-White text-sm">select plan</p>
+              </div>
+            </li>
+            <li class="step flex items-center gap-3">
+              <p class="step-number  rounded-full w-8 h-8 flex items-center justify-center border-2 text-lightBlue font-bold">3</p>
+              <div class="step-info flex flex-col ">
+                <p class="step-level uppercase font-thin text-xs text-White">step 3</p>
+                <p class="info uppercase font-bold text-White text-sm">add-ons</p>
+              </div>
+            </li>
+            <li class="step flex items-center gap-3">
+              <p class="step-number rounded-full w-8 h-8 flex items-center justify-center border-2 font-bold border-lightBlue   text-lightBlue">4</p>
+              <div class="step-info flex flex-col ">
+                <p class="step-level uppercase font-thin text-xs text-White">step 4</p>
+                <p class="info uppercase font-bold text-White text-sm">summary</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+        <div class="informations col-span-2 max-w-md ">
+          <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
+          <p class="information__description text-base font-light text-purplishBlue mb-8">
+            Please provide your name, email address, and phone number.
+          </p>
+          <div class="information__selects">
+            <form action="">
+              <div class="input-group flex flex-col gap-2 mb-4 ">
+                <label for="name" class="text-MarineBlue font-semibold">Name</label>
+                <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
+              </div>
+              <div class="input-group flex flex-col  gap-2 mb-4">
+                <label for="email"  class="text-MarineBlue font-semibold">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full border-2 border-pastelBlue rounded-md  p-2"
+                  placeholder="e.g stephenking@lorem.com"
+                />
+              </div>
+              <div class="input-group flex flex-col gap-2 mb-4">
+                <label for="number"  class="text-MarineBlue font-semibold">Phone Number</label>
+                <input
+                  type="number"
+                  class="w-full border-2 border-pastelBlue rounded-md p-2"
+                  id="number"
+                  placeholder="e.g +1 234 567 890"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="navigations flex justify-between items-center ">
+            <a href="#" class="btn-back">Go back</a>
+            <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block"> next step</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
