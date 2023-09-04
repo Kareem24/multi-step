@@ -14,6 +14,18 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="flex">
+
+      <div class="bg-MarineBlue w-6 h-6"></div>
+      <div class="bg-purplishBlue w-6 h-6"></div>
+      <div class="bg-pastelBlue w-6 h-6"></div>
+      <div class="bg-lightBlue w-6 h-6"></div>
+      <div class="bg-strawberryRed w-6 h-6"></div>
+      <div class="bg-coolGray w-6 h-6"></div>
+      <div class="bg-Magnolia w-6 h-6"></div>
+      <div class="bg-Alabaster w-6 h-6"></div>
+    </div>
+    
       <!-- MarineBlue: "hsl(213, 96%, 18%)",
         purplishBlue: 'hsl(243, 100%, 62%)',
         pastelBlue: 'hsl(228, 100%, 84%)',
@@ -29,28 +41,28 @@
         <aside  class="side-nav bg-center bg-cover bg-no-repeat h-full w-full p-8 bg-desktop rounded-lg" >
           <ul class="steps flex flex-col gap-5">
             <li class="step flex items-center gap-3">
-              <p class="step-number bg-lightBlue rounded-full w-8 h-8 flex items-center justify-center text-MarineBlue font-bold">1</p>
+              <p class="step-number rounded-full w-8 h-8 flex items-center justify-center  font-bold  border-lightBlue  border-2 text-lightBlue active">1</p>
               <div class="step-info flex flex-col ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 1</p>
                 <p class="info uppercase font-bold text-White text-sm">your info</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
-              <p class="step-number border-lightBlue  border-2 text-lightBlue rounded-full w-8 h-8 flex items-center justify-center font-bold">2</p>
+              <p class="step-number step-num">2</p>
               <div class="step-info flex flex-col ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 2</p>
                 <p class="info uppercase font-bold text-White text-sm">select plan</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
-              <p class="step-number  rounded-full w-8 h-8 flex items-center justify-center border-2 text-lightBlue font-bold">3</p>
+              <p class="step-number  step-num">3</p>
               <div class="step-info flex flex-col ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 3</p>
                 <p class="info uppercase font-bold text-White text-sm">add-ons</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
-              <p class="step-number rounded-full w-8 h-8 flex items-center justify-center border-2 font-bold border-lightBlue   text-lightBlue">4</p>
+              <p class="step-number step-num ">4</p>
               <div class="step-info flex flex-col ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 4</p>
                 <p class="info uppercase font-bold text-White text-sm">summary</p>
@@ -59,12 +71,12 @@
           </ul>
         </aside>
         <div class="informations col-span-2 max-w-md ">
-          <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
-          <p class="information__description text-base font-light text-purplishBlue mb-8">
-            Please provide your name, email address, and phone number.
-          </p>
           <div class="information__selects">
-            <form action="">
+            <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
+            <p class="information__description text-base font-light text-purplishBlue mb-8">
+              Please provide your name, email address, and phone number.
+            </p>
+            <form action="" class="mb-8 hidden">
               <div class="input-group flex flex-col gap-2 mb-4 ">
                 <label for="name" class="text-MarineBlue font-semibold">Name</label>
                 <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
@@ -88,6 +100,71 @@
                 />
               </div>
             </form>
+            <div class="select-plan mb-8  hidden">
+              <div class="flex gap-6">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster premium-active">
+                  <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon mb-9">
+                  <div class="status">
+                    <p class="status-title sub-heading">arcade</p>
+                    <p class="status-price text-sm
+                     font-thin text-lightGray">$92/yr</p>
+                    <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
+                  </div>
+                </div>
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                  <img src="../src/assets/images/icon-advanced.svg" alt="arcade icon" class="icon mb-9">
+                  <div class="status">
+                    <p class="status-title sub-heading">advanced</p>
+                    <p class="status-price text-sm
+                     font-thin text-lightGray">$120/yr</p>
+                    <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
+                  </div>
+                </div>
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                  <img src="../src/assets/images/icon-pro.svg" alt="arcade icon" class="icon mb-9">
+                  <div class="status">
+                    <p class="status-title sub-heading">pro</p>
+                    <p class="status-price text-sm
+                     font-thin text-lightGray">$150/yr</p>
+                    <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
+                  </div>
+                </div>
+              </div>
+              <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle justify-center mt-6 py-3 gap-4">
+                <p class="font-bold text-sm text-coolGray">Monthly</p>
+                <div class="toggle">00</div>
+                <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
+              </div>
+            </div>
+            <div class="add-ons mb-8 ">
+              <ul class="add-ons__items">
+               
+                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 p-4 ml-0" >
+                  <input type="checkbox" name="online service" checked="checked">
+                  <div class="justify-items-start w-3/4">
+                    <p class="font-bold sub-heading"> Online service</p>
+                    <p class=" text-pastelBlue ">Access to multiplayer games </p>
+                  </div>
+                  <p class="text-purplishBlue justify-end flex">+$10/yr</p>
+                </li>
+                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 ml-0 p-4" >
+                  <input type="checkbox" class="" checked="checked">
+                  <div class="justify-items-start w-3/4">
+                    <p class="font-bold sub-heading"> Larger storage</p>
+                    <p class=" text-pastelBlue ">Extra 1TB of cloud save</p>
+                  </div>
+                  <p class="text-purplishBlue justify-end flex">+$20/yr</p>
+                </li>
+                <li class="flex justify-between gap-4 border-2 rounded-md m-4 ml-0 p-4" >
+                  <input type="checkbox" name="online service" id="" >
+                  <div class="justify-items-start w-3/4">
+                    <p class="font-bold sub-heading"> Customizable profile</p>
+                    <p class=" text-pastelBlue ">Custom theme on your profile</p>
+                  </div>
+                  <p class="text-purplishBlue justify-end flex">+$20/yr</p>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="navigations flex justify-between items-center ">
             <a href="#" class="btn-back">Go back</a>
