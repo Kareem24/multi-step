@@ -20,3 +20,10 @@
 .sub-heading {
   @apply font-bold capitalize text-sm text-MarineBlue;
 }
+
+.plan-acc {
+  @apply justify-self-end text-sm font-semibold text-MarineBlue;
+}
+.line {
+  border-bottom: 1px solid hsl(231, 11%, 63%);
+}

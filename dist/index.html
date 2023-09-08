@@ -26,16 +26,7 @@
       <div class="bg-Alabaster w-6 h-6"></div>
     </div>
     
-      <!-- MarineBlue: "hsl(213, 96%, 18%)",
-        purplishBlue: 'hsl(243, 100%, 62%)',
-        pastelBlue: 'hsl(228, 100%, 84%)',
-        lightBlue: ' hsl(206, 94%, 87%)',
-        strawberryRed: 'hsl(354, 84%, 57%)',
-        coolGray: ' hsl(231, 11%, 63%)',
-        lightGray: 'hsl(229, 24%, 87%)',
-        Magnolia: 'hsl(217, 100%, 97%)',
-        Alabaster: 'hsl(231, 100%, 99%)',
-        White: ' hsl(0, 0%, 100%)', -->
+
     <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
       <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8">
         <aside  class="side-nav bg-center bg-cover bg-no-repeat h-full w-full p-8 bg-desktop rounded-lg" >
@@ -136,10 +127,10 @@
                 <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
               </div>
             </div>
-            <div class="add-ons mb-8 ">
+            <div class="add-ons mb-8 hidden">
               <ul class="add-ons__items">
                
-                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 p-4 ml-0" >
+                <li class="flex justify-between gap-4  border-2 rounded-md m-4 p-4 ml-0" >
                   <input type="checkbox" name="online service" checked="checked">
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Online service</p>
@@ -156,7 +147,7 @@
                   <p class="text-purplishBlue justify-end flex">+$20/yr</p>
                 </li>
                 <li class="flex justify-between gap-4 border-2 rounded-md m-4 ml-0 p-4" >
-                  <input type="checkbox" name="online service" id="" >
+                  <input type="checkbox" name="online service" id="" value="checked" >
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Customizable profile</p>
                     <p class=" text-pastelBlue ">Custom theme on your profile</p>
@@ -165,6 +156,31 @@
                 </li>
               </ul>
             </div>
+            <article class="finishing-up mb-8">
+              <div class=" bg-Alabaster rounded-md py-7 px-5 mb-4">
+                <div class="flex items-center justify-between">
+
+                  <div class="plan-span">
+                    <p class="font-bold text-MarineBlue"> Arcade ( <span class="duration">yearly</span> )</p>
+                    <a href="#" class="change decoration text-sm text-coolGray underline">Change</a>
+                  </div>
+                  <p class="font-bold text-MarineBlue ">$<span class="price ">90</span>/ <span class="time">yr</span></p>
+                </div>
+                <div class="border-b-1 border-coolGray line mt-4 mb-4"></div>
+                <div class="grid grid-cols-2">
+                  <p class="text-sm text-coolGray mb-4">online service</p>
+                  <p class="plan-acc">+$<span class="price-2 ">10</span>/<span class="time">yr</span></p>
+                  <p class="text-sm text-coolGray">larger storage</p>
+                  <p class="plan-acc">+$<span class="price-3">20</span>/<span class="time">yr</span></p>
+
+                </div>
+              </div>
+              <div class="flex items-center justify-between px-5">
+                <p class="text-sm text-coolGray">Total <span> (per year)</span></p>
+                <p class="font-bold text-purplishBlue">$ <span> 120</span>/ <span>yr</span> </p>
+              </div>
+
+            </article>
           </div>
           <div class="navigations flex justify-between items-center ">
             <a href="#" class="btn-back">Go back</a>
@@ -173,5 +189,15 @@
         </div>
       </div>
     </main>
+          <!-- MarineBlue: "hsl(213, 96%, 18%)",
+        purplishBlue: 'hsl(243, 100%, 62%)',
+        pastelBlue: 'hsl(228, 100%, 84%)',
+        lightBlue: ' hsl(206, 94%, 87%)',
+        strawberryRed: 'hsl(354, 84%, 57%)',
+        coolGray: ' hsl(231, 11%, 63%)',
+        lightGray: 'hsl(229, 24%, 87%)',
+        Magnolia: 'hsl(217, 100%, 97%)',
+        Alabaster: 'hsl(231, 100%, 99%)',
+        White: ' hsl(0, 0%, 100%)', -->
   </body>
 </html>
