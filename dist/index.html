@@ -28,7 +28,7 @@
     
 
     <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
-      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8">
+      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8 ">
         <aside  class="side-nav bg-center bg-cover bg-no-repeat h-full w-full p-8 bg-desktop rounded-lg" >
           <ul class="steps flex flex-col gap-5">
             <li class="step flex items-center gap-3">
@@ -63,10 +63,13 @@
         </aside>
         <div class="informations col-span-2 max-w-md ">
           <div class="information__selects">
-            <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
-            <p class="information__description text-base font-light text-purplishBlue mb-8">
-              Please provide your name, email address, and phone number.
-            </p>
+            <div class="hidden">
+
+              <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
+              <p class="information__description text-base font-light text-purplishBlue mb-8">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
             <form action="" class="mb-8 hidden">
               <div class="input-group flex flex-col gap-2 mb-4 ">
                 <label for="name" class="text-MarineBlue font-semibold">Name</label>
@@ -156,7 +159,7 @@
                 </li>
               </ul>
             </div>
-            <article class="finishing-up mb-8">
+            <article class="finishing-up mb-8 hidden">
               <div class=" bg-Alabaster rounded-md py-7 px-5 mb-4">
                 <div class="flex items-center justify-between">
 
@@ -181,11 +184,21 @@
               </div>
 
             </article>
+           
           </div>
-          <div class="navigations flex justify-between items-center ">
+          <div class="navigations flex justify-between items-center  hidden">
             <a href="#" class="btn-back">Go back</a>
             <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block"> next step</a>
           </div>
+           <div class=" flex h-full justify-center  items-center  w-full">
+              <div class="max-w-fit text-center">
+
+                <img src="../src/assets/images/icon-thank-you.svg" alt="" class="w-12 m-auto">
+                <h3 class="font-bold text-4xl  m-auto text-MarineBlue mt-4 mb-4">Thank you!</h3>
+                <p class="text-coolGray">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com
+                </p>
+              </div>
+            </div>
         </div>
       </div>
     </main>

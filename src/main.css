@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.container {
+  min-height: 80vh;
+}
 .step-num {
   @apply border-lightBlue  border-2 text-lightBlue rounded-full w-8 h-8 flex items-center justify-center font-bold;
 }
