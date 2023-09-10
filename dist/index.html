@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="../src/index.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -63,14 +64,14 @@
         </aside>
         <div class="informations col-span-2 max-w-md ">
           <div class="information__selects">
-            <div class="hidden">
+            <div class="headings ">
 
               <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
               <p class="information__description text-base font-light text-purplishBlue mb-8">
                 Please provide your name, email address, and phone number.
               </p>
             </div>
-            <form action="" class="mb-8 hidden">
+            <form action="" class="mb-8 main-content">
               <div class="input-group flex flex-col gap-2 mb-4 ">
                 <label for="name" class="text-MarineBlue font-semibold">Name</label>
                 <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
@@ -94,7 +95,7 @@
                 />
               </div>
             </form>
-            <div class="select-plan mb-8  hidden">
+            <div class="select-plan mb-8  hidden main-content">
               <div class="flex gap-6">
                 <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster premium-active">
                   <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon mb-9">
@@ -130,7 +131,7 @@
                 <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
               </div>
             </div>
-            <div class="add-ons mb-8 hidden">
+            <div class="add-ons mb-8 hidden main-content">
               <ul class="add-ons__items">
                
                 <li class="flex justify-between gap-4  border-2 rounded-md m-4 p-4 ml-0" >
@@ -159,7 +160,7 @@
                 </li>
               </ul>
             </div>
-            <article class="finishing-up mb-8 hidden">
+            <article class="finishing-up mb-8 hidden main-content">
               <div class=" bg-Alabaster rounded-md py-7 px-5 mb-4">
                 <div class="flex items-center justify-between">
 
@@ -186,11 +187,11 @@
             </article>
            
           </div>
-          <div class="navigations flex justify-between items-center  hidden">
+          <div class="navigations flex justify-between items-center ">
             <a href="#" class="btn-back">Go back</a>
             <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block"> next step</a>
           </div>
-           <div class=" flex h-full justify-center  items-center  w-full">
+           <div class=" flex h-full justify-center  items-center  w-full hidden main-content">
               <div class="max-w-fit text-center">
 
                 <img src="../src/assets/images/icon-thank-you.svg" alt="" class="w-12 m-auto">
