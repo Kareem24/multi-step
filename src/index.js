@@ -6,6 +6,13 @@ const infoTitle = document.querySelector('.information__title')
 const infoDesc = document.querySelector('.information__description')
 const navdiv = document.querySelector('.navigations')
 const headings = document.querySelector('.headings ')
+const cards = document.querySelectorAll('.card')
+const toggle = document.getElementById('toggle')
+const arcadePrice = document.querySelector('.arcade-price')
+const advancedPrice = document.querySelector('.advanced-price')
+const proPrice = document.querySelector('.pro-price')
+const spanTime = document.querySelectorAll('.time-span')
+const statusBonus = document.querySelectorAll('.status-bonus')
 const data = [
   {
     id: 0,
@@ -31,6 +38,7 @@ const data = [
 console.log(mainContents)
 let step = 0
 let contentStep = 0
+let plan = ''
 mainContents.forEach((content, i) => {
   content.setAttribute('data-id', i)
 })
@@ -56,18 +64,21 @@ const stepActive = () => {
 
   steps[step].classList.add('active')
 }
-const next = (e) => {
-  e.preventDefault()
-  if (step === steps.length - 2) {
+const toggleBtnState = () => {
+  if (contentStep === mainContents.length - 2) {
+    console.log('come in')
     nextBtn.textContent = 'Confirm'
+    nextBtn.classList.add('confirm')
   } else {
     nextBtn.textContent = 'Next Step'
+    nextBtn.classList.remove('confirm')
   }
+}
+const next = (e) => {
+  e.preventDefault()
 
-  if (contentStep === mainContents.length - 1) {
-    contentStep = mainContents.length - 1
-    return
-  }
+  if (contentStep === mainContents.length - 1) return
+
   contentStep++
   changeContent()
   if (step === steps.length - 1) {
@@ -78,10 +89,13 @@ const next = (e) => {
   }
   step++
   changeHeading()
+  toggleBtnState()
+
   stepActive()
 }
 preBtn.addEventListener('click', (e) => {
   e.preventDefault()
+
   if (contentStep === 0) return
   contentStep--
   changeContent()
@@ -89,6 +103,49 @@ preBtn.addEventListener('click', (e) => {
   step--
   stepActive()
   changeHeading()
+  toggleBtnState()
 })
+const changeActive = (e, activeState, button) => {
+  const change = e.currentTarget
 
+  button.forEach((btn) => {
+    // eslint-disable-next-line no-unused-expressions
+    btn !== change
+      ? btn.classList.remove(activeState)
+      : change.classList.add(activeState)
+    plan = change.dataset.plan
+  })
+}
+cards.forEach((card) => {
+  card.addEventListener('click', (e) => {
+    changeActive(e, 'premium-active', cards)
+  })
+})
+let timePlan = ''
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('monthly')
+  if (toggle.classList.contains('monthly')) {
+    timePlan = 'monthly'
+    arcadePrice.textContent = '9'
+    advancedPrice.textContent = '12'
+    proPrice.textContent = '15'
+    spanTime.forEach((time) => {
+      time.textContent = 'mo'
+    })
+    statusBonus.forEach((status) => {
+      status.classList.add('hide-bonus')
+    })
+  } else {
+    timePlan = 'yearly'
+    spanTime.forEach((time) => {
+      time.textContent = 'yr'
+    })
+    statusBonus.forEach((status) => {
+      status.classList.remove('hide-bonus')
+    })
+    arcadePrice.textContent = '90'
+    advancedPrice.textContent = '120'
+    proPrice.textContent = '150'
+  }
+})
 nextBtn.addEventListener('click', next)

@@ -97,37 +97,42 @@
             </form>
             <div class="select-plan mb-8  hidden main-content">
               <div class="flex gap-6">
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster premium-active">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer premium-active" data-plan="arcade" >
                   <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">arcade</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$92/yr</p>
+                     font-thin text-lightGray">$<span class="arcade-price">90</span>/<span class="time-span">yr</span> </p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="advanced">
                   <img src="../src/assets/images/icon-advanced.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">advanced</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$120/yr</p>
+                     font-thin text-lightGray">$<span class="advanced-price">120</span>/<span class="time-span">yr</span> </p></p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="pro">
                   <img src="../src/assets/images/icon-pro.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">pro</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$150/yr</p>
+                     font-thin text-lightGray">$<span class="pro-price">150</span>/<span class="time-span">yr</span> </p></p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
               </div>
-              <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle justify-center mt-6 py-3 gap-4">
+              <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle items-center   justify-center mt-6 py-3 gap-4">
                 <p class="font-bold text-sm text-coolGray">Monthly</p>
-                <div class="toggle">00</div>
+                <div class="toggle cursor-pointer" id="toggle">
+                    <div class="switch">
+                      <input role="switch" type="checkbox" class="switch-input" id="switchId">
+                      <label class="switch-input-label"></label>
+                  </div>
+                </div>
                 <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
               </div>
             </div>
@@ -189,7 +194,7 @@
           </div>
           <div class="navigations flex justify-between items-center ">
             <a href="#" class="btn-back">Go back</a>
-            <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block"> next step</a>
+            <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</a>
           </div>
            <div class=" flex h-full justify-center  items-center  w-full hidden main-content">
               <div class="max-w-fit text-center">
