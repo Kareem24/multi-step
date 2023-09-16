@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const steps = document.querySelectorAll('.step-number')
 const mainContents = document.querySelectorAll('.main-content')
 const nextBtn = document.querySelector('.btn-next')
@@ -13,6 +14,12 @@ const advancedPrice = document.querySelector('.advanced-price')
 const proPrice = document.querySelector('.pro-price')
 const spanTime = document.querySelectorAll('.time-span')
 const statusBonus = document.querySelectorAll('.status-bonus')
+const addOns = document.querySelectorAll('.addons')
+const duration = document.querySelector('.duration')
+const price1 = document.querySelector('.add-on-price-1')
+const price2 = document.querySelector('.add-on-price-2')
+const price3 = document.querySelector('.add-on-price-3')
+console.log(spanTime);
 const data = [
   {
     id: 0,
@@ -129,6 +136,9 @@ toggle.addEventListener('click', () => {
     arcadePrice.textContent = '9'
     advancedPrice.textContent = '12'
     proPrice.textContent = '15'
+    // eslint-disable-next-line no-multi-assign
+    price1.textContent = price2.textContent = '1'
+    price3.textContent = '2'
     spanTime.forEach((time) => {
       time.textContent = 'mo'
     })
@@ -146,6 +156,15 @@ toggle.addEventListener('click', () => {
     arcadePrice.textContent = '90'
     advancedPrice.textContent = '120'
     proPrice.textContent = '150'
+    // eslint-disable-next-line no-multi-assign
+    price1.textContent = price2.textContent = '10'
+    price3.textContent = '20'
   }
 })
 nextBtn.addEventListener('click', next)
+// loop through the list 
+// if the input is checked 
+// add it to finishing up 
+// calculate the total of the finish up
+// add active class to the list item
+// else remove active
