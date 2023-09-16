@@ -19,7 +19,7 @@ const duration = document.querySelector('.duration')
 const price1 = document.querySelector('.add-on-price-1')
 const price2 = document.querySelector('.add-on-price-2')
 const price3 = document.querySelector('.add-on-price-3')
-console.log(spanTime);
+console.log(spanTime)
 const data = [
   {
     id: 0,
@@ -162,9 +162,9 @@ toggle.addEventListener('click', () => {
   }
 })
 nextBtn.addEventListener('click', next)
-// loop through the list 
-// if the input is checked 
-// add it to finishing up 
+// loop through the list
+// if the input is checked
+// add it to finishing up
 // calculate the total of the finish up
 // add active class to the list item
 // else remove active
