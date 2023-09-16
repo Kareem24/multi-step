@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="../src/index.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -26,18 +27,9 @@
       <div class="bg-Alabaster w-6 h-6"></div>
     </div>
     
-      <!-- MarineBlue: "hsl(213, 96%, 18%)",
-        purplishBlue: 'hsl(243, 100%, 62%)',
-        pastelBlue: 'hsl(228, 100%, 84%)',
-        lightBlue: ' hsl(206, 94%, 87%)',
-        strawberryRed: 'hsl(354, 84%, 57%)',
-        coolGray: ' hsl(231, 11%, 63%)',
-        lightGray: 'hsl(229, 24%, 87%)',
-        Magnolia: 'hsl(217, 100%, 97%)',
-        Alabaster: 'hsl(231, 100%, 99%)',
-        White: ' hsl(0, 0%, 100%)', -->
+
     <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
-      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8">
+      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8 ">
         <aside  class="side-nav bg-center bg-cover bg-no-repeat h-full w-full p-8 bg-desktop rounded-lg" >
           <ul class="steps flex flex-col gap-5">
             <li class="step flex items-center gap-3">
@@ -72,11 +64,14 @@
         </aside>
         <div class="informations col-span-2 max-w-md ">
           <div class="information__selects">
-            <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
-            <p class="information__description text-base font-light text-purplishBlue mb-8">
-              Please provide your name, email address, and phone number.
-            </p>
-            <form action="" class="mb-8 hidden">
+            <div class="headings ">
+
+              <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
+              <p class="information__description text-base font-light text-purplishBlue mb-8">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
+            <form action="" class="mb-8 main-content">
               <div class="input-group flex flex-col gap-2 mb-4 ">
                 <label for="name" class="text-MarineBlue font-semibold">Name</label>
                 <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
@@ -100,52 +95,57 @@
                 />
               </div>
             </form>
-            <div class="select-plan mb-8  hidden">
+            <div class="select-plan mb-8  hidden main-content">
               <div class="flex gap-6">
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster premium-active">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer premium-active" data-plan="arcade" >
                   <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">arcade</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$92/yr</p>
+                     font-thin text-lightGray">$<span class="arcade-price">90</span>/<span class="time-span">yr</span> </p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="advanced">
                   <img src="../src/assets/images/icon-advanced.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">advanced</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$120/yr</p>
+                     font-thin text-lightGray">$<span class="advanced-price">120</span>/<span class="time-span">yr</span> </p></p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster">
+                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="pro">
                   <img src="../src/assets/images/icon-pro.svg" alt="arcade icon" class="icon mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">pro</p>
                     <p class="status-price text-sm
-                     font-thin text-lightGray">$150/yr</p>
+                     font-thin text-lightGray">$<span class="pro-price">150</span>/<span class="time-span">yr</span> </p></p>
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
               </div>
-              <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle justify-center mt-6 py-3 gap-4">
+              <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle items-center   justify-center mt-6 py-3 gap-4">
                 <p class="font-bold text-sm text-coolGray">Monthly</p>
-                <div class="toggle">00</div>
+                <div class="toggle cursor-pointer" id="toggle">
+                    <div class="switch">
+                      <input role="switch" type="checkbox" class="switch-input" id="switchId">
+                      <label class="switch-input-label"></label>
+                  </div>
+                </div>
                 <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
               </div>
             </div>
-            <div class="add-ons mb-8 ">
+            <div class="add-ons mb-8 hidden main-content">
               <ul class="add-ons__items">
                
-                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 p-4 ml-0" >
+                <li class="flex justify-between gap-4  border-2 rounded-md m-4 p-4 ml-0" >
                   <input type="checkbox" name="online service" checked="checked">
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Online service</p>
                     <p class=" text-pastelBlue ">Access to multiplayer games </p>
                   </div>
-                  <p class="text-purplishBlue justify-end flex">+$10/yr</p>
+                  <p class="text-purplishBlue justify-end flex">+$<span class="add-on-price-1">10</span> /<span class="time-span">yr</span></p>
                 </li>
                 <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 ml-0 p-4" >
                   <input type="checkbox" class="" checked="checked">
@@ -153,25 +153,70 @@
                     <p class="font-bold sub-heading"> Larger storage</p>
                     <p class=" text-pastelBlue ">Extra 1TB of cloud save</p>
                   </div>
-                  <p class="text-purplishBlue justify-end flex">+$20/yr</p>
+                  <p class="text-purplishBlue justify-end flex">+$<span class="add-on-price-2">20</span>/<span class="time-span">yr</span></p>
                 </li>
                 <li class="flex justify-between gap-4 border-2 rounded-md m-4 ml-0 p-4" >
-                  <input type="checkbox" name="online service" id="" >
+                  <input type="checkbox" name="online service" id="" value="checked" >
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Customizable profile</p>
                     <p class=" text-pastelBlue ">Custom theme on your profile</p>
                   </div>
-                  <p class="text-purplishBlue justify-end flex">+$20/yr</p>
+                  <p class="text-purplishBlue justify-end flex">+$<span class="add-on-price-3">20</span>/<span class="time-span">yr</span></p>
                 </li>
               </ul>
             </div>
+            <article class="finishing-up mb-8 hidden main-content">
+              <div class=" bg-Alabaster rounded-md py-7 px-5 mb-4">
+                <div class="flex items-center justify-between">
+
+                  <div class="plan-span">
+                    <p class="font-bold text-MarineBlue"> Arcade ( <span class="duration">yearly</span> )</p>
+                    <a href="#" class="change decoration text-sm text-coolGray underline">Change</a>
+                  </div>
+                  <p class="font-bold text-MarineBlue ">$<span class="price ">90</span>/ <span class="time-span">yr</span></p>
+                </div>
+                <div class="border-b-1 border-coolGray line mt-4 mb-4"></div>
+                <div class="grid grid-cols-2">
+                  <p class="text-sm text-coolGray mb-4">online service</p>
+                  <p class="plan-acc">+$<span class="price-2 ">10</span>/<span class="time-span">yr</span></p>
+                  <p class="text-sm text-coolGray">larger storage</p>
+                  <p class="plan-acc">+$<span class="price-3">20</span>/<span class="time-span">yr</span></p>
+
+                </div>
+              </div>
+              <div class="flex items-center justify-between px-5">
+                <p class="text-sm text-coolGray">Total <span> (per year)</span></p>
+                <p class="font-bold text-purplishBlue">$ <span> 120</span>/ <span>yr</span> </p>
+              </div>
+
+            </article>
+           
           </div>
           <div class="navigations flex justify-between items-center ">
             <a href="#" class="btn-back">Go back</a>
-            <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block"> next step</a>
+            <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</a>
           </div>
+           <div class=" flex h-full justify-center  items-center  w-full hidden main-content">
+              <div class="max-w-fit text-center">
+
+                <img src="../src/assets/images/icon-thank-you.svg" alt="" class="w-12 m-auto">
+                <h3 class="font-bold text-4xl  m-auto text-MarineBlue mt-4 mb-4">Thank you!</h3>
+                <p class="text-coolGray">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com
+                </p>
+              </div>
+            </div>
         </div>
       </div>
     </main>
+          <!-- MarineBlue: "hsl(213, 96%, 18%)",
+        purplishBlue: 'hsl(243, 100%, 62%)',
+        pastelBlue: 'hsl(228, 100%, 84%)',
+        lightBlue: ' hsl(206, 94%, 87%)',
+        strawberryRed: 'hsl(354, 84%, 57%)',
+        coolGray: ' hsl(231, 11%, 63%)',
+        lightGray: 'hsl(229, 24%, 87%)',
+        Magnolia: 'hsl(217, 100%, 97%)',
+        Alabaster: 'hsl(231, 100%, 99%)',
+        White: ' hsl(0, 0%, 100%)', -->
   </body>
 </html>
