@@ -163,7 +163,6 @@ toggle.addEventListener('click', () => {
 })
 nextBtn.addEventListener('click', next)
 // loop through the list
-console.log('hello world');
 // if the input is checked
 // add it to finishing up
 // calculate the total of the finish up
