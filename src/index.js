@@ -19,7 +19,15 @@ const duration = document.querySelector('.duration')
 const price1 = document.querySelector('.add-on-price-1')
 const price2 = document.querySelector('.add-on-price-2')
 const price3 = document.querySelector('.add-on-price-3')
-console.log(spanTime)
+const addOnItems = document.querySelectorAll('.add-ons__item')
+const form = document.querySelector('.form')
+const changeOptions = document.querySelector('.change')
+const totalduration = document.querySelector('.dur')
+const subcriptionPlan = document.querySelector('.subscription-plan')
+const yearly = document.querySelector('.yearly')
+const monthly = document.querySelector('.monthly')
+
+console.log(addOnItems)
 const data = [
   {
     id: 0,
@@ -42,10 +50,12 @@ const data = [
     subHeading: 'Double-check everything looks OK before confirming.',
   },
 ]
-console.log(mainContents)
+
 let step = 0
 let contentStep = 0
 let plan = ''
+let timePlan = ''
+
 mainContents.forEach((content, i) => {
   content.setAttribute('data-id', i)
 })
@@ -71,15 +81,73 @@ const stepActive = () => {
 
   steps[step].classList.add('active')
 }
+const addConfirm = () => {
+  nextBtn.textContent = 'Confirm'
+  nextBtn.classList.add('confirm')
+}
+const removeConfirm = () => {
+  nextBtn.textContent = 'Next Step'
+  nextBtn.classList.remove('confirm')
+}
 const toggleBtnState = () => {
   if (contentStep === mainContents.length - 2) {
     console.log('come in')
-    nextBtn.textContent = 'Confirm'
-    nextBtn.classList.add('confirm')
+    addConfirm()
   } else {
-    nextBtn.textContent = 'Next Step'
-    nextBtn.classList.remove('confirm')
+    removeConfirm()
   }
+}
+const submitInfo = (e) => {
+  e.preventDefault()
+  contentStep++
+  step++
+  changeContent()
+  stepActive()
+  changeHeading()
+  navdiv.classList.remove('hidden')
+  navdiv.classList.add('flex')
+}
+
+const changePlan = () => {
+  toggle.classList.toggle('monthly')
+  if (toggle.classList.contains('monthly')) {
+    timePlan = 'month'
+    arcadePrice.textContent = '9'
+    advancedPrice.textContent = '12'
+    proPrice.textContent = '15'
+    // eslint-disable-next-line no-multi-assign
+    price1.textContent = price2.textContent = '1'
+    price3.textContent = '2'
+    spanTime.forEach((time) => {
+      time.textContent = 'mo'
+    })
+    statusBonus.forEach((status) => {
+      status.classList.add('hide-bonus')
+    })
+  } else {
+    timePlan = 'year'
+    spanTime.forEach((time) => {
+      time.textContent = 'yr'
+    })
+    statusBonus.forEach((status) => {
+      status.classList.remove('hide-bonus')
+    })
+    arcadePrice.textContent = '90'
+    advancedPrice.textContent = '120'
+    proPrice.textContent = '150'
+    // eslint-disable-next-line no-multi-assign
+    price1.textContent = price2.textContent = '10'
+    price3.textContent = '20'
+  }
+  if (timePlan === 'month') {
+    yearly.classList.remove('plan-active')
+    monthly.classList.add('plan-active')
+  } else {
+    monthly.classList.remove('plan-active')
+    yearly.classList.add('plan-active')
+  }
+  duration.textContent = timePlan
+  totalduration.textContent = timePlan
 }
 const next = (e) => {
   e.preventDefault()
@@ -100,18 +168,25 @@ const next = (e) => {
 
   stepActive()
 }
-preBtn.addEventListener('click', (e) => {
+const previousContent = (e) => {
   e.preventDefault()
 
   if (contentStep === 0) return
   contentStep--
-  changeContent()
-  if (step === 0) return
   step--
-  stepActive()
+
+  changeContent()
   changeHeading()
+
+  stepActive()
+
+  if (step < 1) {
+    navdiv.classList.add('hidden')
+    return
+  }
+
   toggleBtnState()
-})
+}
 const changeActive = (e, activeState, button) => {
   const change = e.currentTarget
 
@@ -121,6 +196,7 @@ const changeActive = (e, activeState, button) => {
       ? btn.classList.remove(activeState)
       : change.classList.add(activeState)
     plan = change.dataset.plan
+    subcriptionPlan.textContent = plan
   })
 }
 cards.forEach((card) => {
@@ -128,40 +204,20 @@ cards.forEach((card) => {
     changeActive(e, 'premium-active', cards)
   })
 })
-let timePlan = ''
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('monthly')
-  if (toggle.classList.contains('monthly')) {
-    timePlan = 'monthly'
-    arcadePrice.textContent = '9'
-    advancedPrice.textContent = '12'
-    proPrice.textContent = '15'
-    // eslint-disable-next-line no-multi-assign
-    price1.textContent = price2.textContent = '1'
-    price3.textContent = '2'
-    spanTime.forEach((time) => {
-      time.textContent = 'mo'
-    })
-    statusBonus.forEach((status) => {
-      status.classList.add('hide-bonus')
-    })
-  } else {
-    timePlan = 'yearly'
-    spanTime.forEach((time) => {
-      time.textContent = 'yr'
-    })
-    statusBonus.forEach((status) => {
-      status.classList.remove('hide-bonus')
-    })
-    arcadePrice.textContent = '90'
-    advancedPrice.textContent = '120'
-    proPrice.textContent = '150'
-    // eslint-disable-next-line no-multi-assign
-    price1.textContent = price2.textContent = '10'
-    price3.textContent = '20'
-  }
-})
+const changeSelectedOption = (e) => {
+  e.preventDefault()
+  step = 1
+  contentStep = 1
+  removeConfirm()
+  stepActive()
+  changeContent()
+  changeHeading()
+}
+toggle.addEventListener('click', changePlan)
+preBtn.addEventListener('click', previousContent)
+form.addEventListener('submit', submitInfo)
 nextBtn.addEventListener('click', next)
+changeOptions.addEventListener('click', changeSelectedOption)
 // loop through the list
 // if the input is checked
 // add it to finishing up

@@ -16,7 +16,6 @@
   </head>
   <body>
     <div class="flex">
-
       <div class="bg-MarineBlue w-6 h-6"></div>
       <div class="bg-purplishBlue w-6 h-6"></div>
       <div class="bg-pastelBlue w-6 h-6"></div>
@@ -29,7 +28,7 @@
     
 
     <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
-      <div class="container max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8 ">
+      <div class="container-m max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8 ">
         <aside  class="side-nav bg-center bg-cover bg-no-repeat w-full p-8 bg-desktop rounded-lg" >
           <ul class="steps flex flex-col gap-5">
             <li class="step flex items-center gap-3">
@@ -71,7 +70,7 @@
                 Please provide your name, email address, and phone number.
               </p>
             </div>
-            <form action="" class="mb-8 main-content">
+            <form action="" class="mb-8 main-content form">
               <div class="input-group flex flex-col gap-2 mb-4 ">
                 <label for="name" class="text-MarineBlue font-semibold">Name</label>
                 <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
@@ -94,6 +93,9 @@
                   placeholder="e.g +1 234 567 890"
                 />
               </div>
+               <div class=" flex justify-end items-center ">
+                  <button type="submit" class="  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</submit>
+                </div>
             </form>
             <div class="select-plan mb-8  hidden main-content">
               <div class="flex gap-6">
@@ -126,20 +128,20 @@
                 </div>
               </div>
               <div class="plan-time w-full rounded-md bg-Alabaster flex align-middle items-center   justify-center mt-6 py-3 gap-4">
-                <p class="font-bold text-sm text-coolGray">Monthly</p>
+                <p class="font-bold text-sm text-coolGray monthly">Monthly</p>
                 <div class="toggle cursor-pointer" id="toggle">
                     <div class="switch">
                       <input role="switch" type="checkbox" class="switch-input" id="switchId">
                       <label class="switch-input-label"></label>
                   </div>
                 </div>
-                <p class="font-bold text-sm text-coolGray plan-active">Yearly</p>
+                <p class="font-bold text-sm text-coolGray plan-active yearly">Yearly</p>
               </div>
             </div>
             <div class="add-ons mb-8 hidden main-content">
               <ul class="add-ons__items">
                
-                <li class="flex justify-between gap-4  border-2 rounded-md m-4 p-4 ml-0" >
+                <li class="flex justify-between gap-4  border-2 rounded-md m-4 p-4 ml-0   add-ons__item" >
                   <input type="checkbox" name="online service" checked="checked" class="checkbox" >
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Online service</p>
@@ -147,7 +149,7 @@
                   </div>
                   <p class="text-purplishBlue justify-end flex">+$<span class="add-on-price-1">10</span> /<span class="time-span">yr</span></p>
                 </li>
-                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 ml-0 p-4" >
+                <li class="flex justify-between gap-4 premium-active border-2 rounded-md m-4 ml-0 p-4  add-ons__item" >
                   <input type="checkbox" class="checkbox" checked="checked">
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Larger storage</p>
@@ -155,7 +157,7 @@
                   </div>
                   <p class="text-purplishBlue justify-end flex">+$<span class="add-on-price-2">20</span>/<span class="time-span">yr</span></p>
                 </li>
-                <li class="flex justify-between gap-4 border-2 rounded-md m-4 ml-0 p-4" >
+                <li class="flex justify-between gap-4 border-2 rounded-md m-4 ml-0 p-4  add-ons__item" >
                   <input type="checkbox" name="online service" id="" value="checked" class="checkbox"  >
                   <div class="justify-items-start w-3/4">
                     <p class="font-bold sub-heading"> Customizable profile</p>
@@ -170,7 +172,7 @@
                 <div class="flex items-center justify-between">
 
                   <div class="plan-span">
-                    <p class="font-bold text-MarineBlue"> Arcade ( <span class="duration">yearly</span> )</p>
+                    <p class="font-bold text-MarineBlue subscription-plan capitalize"> Arcade ( <span class="duration">year</span>ly )</p>
                     <a href="#" class="change decoration text-sm text-coolGray underline">Change</a>
                   </div>
                   <p class="font-bold text-MarineBlue ">$<span class="price ">90</span>/ <span class="time-span">yr</span></p>
@@ -185,15 +187,15 @@
                 </div>
               </div>
               <div class="flex items-center justify-between px-5">
-                <p class="text-sm text-coolGray">Total <span> (per year)</span></p>
-                <p class="font-bold text-purplishBlue">$ <span> 120</span>/ <span>yr</span> </p>
+                <p class="text-sm text-coolGray">Total  (per <span class='dur'>year</span>)</p>
+                <p class="font-bold text-purplishBlue">$ <span> 120</span>/ <span  class="time-span">yr</span> </p>
               </div>
 
             </article>
            
           </div>
-          <div class="navigations flex justify-between items-center ">
-            <a href="#" class="btn-back">Go back</a>
+          <div class="navigations hidden justify-between items-center ">
+            <a href="#" class="btn-back capitalize" aria-label="go back"> go back</a>
             <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</a>
           </div>
            <div class=" flex h-full justify-center  items-center  w-full hidden main-content">
