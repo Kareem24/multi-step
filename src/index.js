@@ -14,7 +14,6 @@ const advancedPrice = document.querySelector('.advanced-price')
 const proPrice = document.querySelector('.pro-price')
 const spanTime = document.querySelectorAll('.time-span')
 const statusBonus = document.querySelectorAll('.status-bonus')
-const addOns = document.querySelectorAll('.addons')
 const duration = document.querySelector('.duration')
 const price1 = document.querySelector('.add-on-price-1')
 const price2 = document.querySelector('.add-on-price-2')
@@ -218,6 +217,13 @@ preBtn.addEventListener('click', previousContent)
 form.addEventListener('submit', submitInfo)
 nextBtn.addEventListener('click', next)
 changeOptions.addEventListener('click', changeSelectedOption)
+const x = document.querySelectorAll('.checkbox')
+console.log(x);
+x.forEach((f) => {
+  f.addEventListener("change", () => {
+    if (f.checked) console.log(f.name);
+  })
+})
 // loop through the list
 // if the input is checked
 // add it to finishing up

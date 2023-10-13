@@ -991,6 +991,11 @@ video {
   background-color: hsl(243 100% 62% / var(--tw-bg-opacity));
 }
 
+.add-ons__item:hover{
+  --tw-border-opacity: 1;
+  border-color: hsl(243 100% 62% / var(--tw-border-opacity));
+}
+
 .side-nav {
   min-height: 80vh;
 }
