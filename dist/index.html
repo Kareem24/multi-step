@@ -15,64 +15,55 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="flex">
-      <div class="bg-MarineBlue w-6 h-6"></div>
-      <div class="bg-purplishBlue w-6 h-6"></div>
-      <div class="bg-pastelBlue w-6 h-6"></div>
-      <div class="bg-lightBlue w-6 h-6"></div>
-      <div class="bg-strawberryRed w-6 h-6"></div>
-      <div class="bg-coolGray w-6 h-6"></div>
-      <div class="bg-Magnolia w-6 h-6"></div>
-      <div class="bg-Alabaster w-6 h-6"></div>
-    </div>
+   
     
 
-    <main class="main w-full bg-Magnolia  min-h-screen flex items-center">
-      <div class="container-m max-w-3xl m-auto bg-White p-5 pr-16 rounded-lg grid grid-cols-3  gap-8 ">
-        <aside  class="side-nav bg-center bg-cover bg-no-repeat w-full p-8 bg-desktop rounded-lg" >
-          <ul class="steps flex flex-col gap-5">
+    <main class="main w-full bg-Magnolia  min-h-screen md:flex md:items-center relative">
+      <div class="container-m md:max-w-3xl md:m-auto md:bg-White md:p-5 md:pr-16 rounded-lg md:grid md:grid-cols-3  gap-8 ">
+        <aside  class="md:side-nav bg-center bg-cover bg-no-repeat w-full md:p-8 md:bg-desktop bg-mobile md:rounded-lg flex items-center h-52 justify-center" >
+          <ul class="steps flex md:flex-col gap-5 mb-24 md:mb-0">
             <li class="step flex items-center gap-3">
               <p class="step-number rounded-full w-8 h-8 flex items-center justify-center  font-bold  border-lightBlue  border-2 text-lightBlue active">1</p>
-              <div class="step-info flex flex-col ">
+              <div class="step-info md:flex md:flex-col hidden">
                 <p class="step-level uppercase font-thin text-xs text-White">step 1</p>
                 <p class="info uppercase font-bold text-White text-sm">your info</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
               <p class="step-number step-num">2</p>
-              <div class="step-info flex flex-col ">
+              <div class="step-info md:flex md:flex-col hidden ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 2</p>
                 <p class="info uppercase font-bold text-White text-sm">select plan</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
               <p class="step-number  step-num">3</p>
-              <div class="step-info flex flex-col ">
+              <div class="step-info md:flex md:flex-col hidden ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 3</p>
                 <p class="info uppercase font-bold text-White text-sm">add-ons</p>
               </div>
             </li>
             <li class="step flex items-center gap-3">
               <p class="step-number step-num ">4</p>
-              <div class="step-info flex flex-col ">
+              <div class="step-info md:flex md:flex-col hidden ">
                 <p class="step-level uppercase font-thin text-xs text-White">step 4</p>
                 <p class="info uppercase font-bold text-White text-sm">summary</p>
               </div>
             </li>
           </ul>
         </aside>
-        <div class="informations col-span-2 max-w-md ">
+        <div class="informations md:col-span-2 md:max-w-md w-11/12 m-auto bg-white md:bg-none rounded-[15px] px-8 py-4 md:p-0 md:mt-0 -mt-32">
           <div class="information__selects">
             <div class="headings ">
 
-              <h1 class="information__title text-5xl font-bold mt-8 mb-4 text-MarineBlue">Personal info</h1>
+              <h1 class="information__title md:text-5xl  text-2xl font-bold md:mt-8  md:mb-4 text-MarineBlue">Personal info</h1>
               <p class="information__description text-base font-light text-purplishBlue mb-8">
                 Please provide your name, email address, and phone number.
               </p>
             </div>
             <form action="" class="mb-8 main-content form">
-              <div class="input-group flex flex-col gap-2 mb-4 ">
-                <label for="name" class="text-MarineBlue font-semibold">Name</label>
+              <div class="input-group flex flex-col gap-2 md:mb-4 mb-1">
+                <label for="name" class="text-MarineBlue font-semibold ">Name</label>
                 <input type="text" id="name" placeholder="e.g Stephen King" class="w-full border-2 border-pastelBlue rounded-md  p-2 "/>
               </div>
               <div class="input-group flex flex-col  gap-2 mb-4">
@@ -93,14 +84,14 @@
                   placeholder="e.g +1 234 567 890"
                 />
               </div>
-               <div class=" flex justify-end items-center ">
+               <div class=" flex justify-end items-center absolute left-0 bottom-0 bg-white w-full px-4 py-4 md:p-0 md:relative">
                   <button type="submit" class="  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</submit>
                 </div>
             </form>
             <div class="select-plan mb-8  hidden main-content">
-              <div class="flex gap-6">
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer premium-active" data-plan="arcade" >
-                  <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon mb-9">
+              <div class="flex gap-6 flex-col md:flex-row">
+                <div class="card border-2 rounded-md md:p-4 p-2 max-w-xl border-Alabaster cursor-pointer premium-active flex md:block gap-3 " data-plan="arcade" >
+                  <img src="../src/assets/images/icon-arcade.svg" alt="arcade icon" class="icon md:mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">arcade</p>
                     <p class="status-price text-sm
@@ -108,8 +99,8 @@
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="advanced">
-                  <img src="../src/assets/images/icon-advanced.svg" alt="arcade icon" class="icon mb-9">
+                <div class="card border-2 rounded-md md:p-4 p-2 max-w-xl border-Alabaster cursor-pointer flex md:block gap-6 " data-plan="advanced">
+                  <img src="../src/assets/images/icon-advanced.svg" alt="arcade icon" class="icon  md:mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">advanced</p>
                     <p class="status-price text-sm
@@ -117,8 +108,8 @@
                     <p class="status-bonus text-sm font-semibold text-MarineBlue">2 month free</p>
                   </div>
                 </div>
-                <div class="card border-2 rounded-md p-4 max-w-xl border-Alabaster cursor-pointer" data-plan="pro">
-                  <img src="../src/assets/images/icon-pro.svg" alt="arcade icon" class="icon mb-9">
+                <div class="card border-2 rounded-md md:p-4 p-2 max-w-xl border-Alabaster cursor-pointer flex md:block gap-6 " data-plan="pro">
+                  <img src="../src/assets/images/icon-pro.svg" alt="arcade icon" class="icon  md:mb-9">
                   <div class="status">
                     <p class="status-title sub-heading">pro</p>
                     <p class="status-price text-sm
@@ -194,7 +185,7 @@
             </article>
            
           </div>
-          <div class="navigations hidden justify-between items-center ">
+          <div class="navigations hidden justify-between items-center absolute left-0 bottom-0 bg-white w-full px-4 py-4 md:p-0 md:relative">
             <a href="#" class="btn-back capitalize" aria-label="go back"> go back</a>
             <a href="#" class="btn-next  py-2 px-4 bg-MarineBlue text-White rounded-md capitalize block "> next step</a>
           </div>
