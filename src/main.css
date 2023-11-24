@@ -32,6 +32,12 @@
 .confirm {
   @apply bg-purplishBlue;
 }
+.add-ons__item:hover {
+  @apply border-purplishBlue;
+}
+.side-nav {
+  min-height: 80vh;
+}
 .line {
   border-bottom: 1px solid hsl(231, 11%, 63%);
 }
